@@ -10,6 +10,7 @@ def test_get_response():
         requester = GetRequester(URL)
         assert(requester.get_response_body() == JSON_STRING)
 
+    
 def test_load_json():
         '''load_json function returns response.'''
         requester = GetRequester(URL)

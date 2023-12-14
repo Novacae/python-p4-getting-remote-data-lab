@@ -7,10 +7,17 @@ class GetRequester:
     def __init__(self, url):
         self.url = url
 
+    #def get_response_body(self):
+     #   response = requests.get(self.url)
+      #  return response.text
+
     def get_response_body(self):
         response = requests.get(self.url)
-        return response.text
+        return response.content
+
+
+    
 
     def load_json(self):
-        json_data = json.loads(self.get_response_body())
-        return json_data
+        response_body = self.get_response_body()
+        return json.loads(response_body.decode('utf-8')) 
